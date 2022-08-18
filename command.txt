@@ -1,0 +1,14 @@
+build file
+```
+go build <filename>
+```
+
+execute file
+```
+./<filename>
+```
+
+run for development
+```
+go run <filename>
+```
