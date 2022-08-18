@@ -7,6 +7,11 @@ func main() {
 	var name string
 	var boolVariable bool = false
 
+	var (
+		firstName = "vincent"
+		lastName = "pradipta"
+	)
+
 	// another form of variable assignment
 	test := "Test Variable"
 
@@ -18,4 +23,5 @@ func main() {
 	fmt.Println("Len: ", len(name))
 	fmt.Println("Inverse Bool", !boolVariable)
 	fmt.Printf("Test: %s\n", test)
+	fmt.Printf("Name: %s %s\n", firstName, lastName)
 }
