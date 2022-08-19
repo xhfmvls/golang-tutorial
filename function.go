@@ -2,19 +2,20 @@ package main
 
 import (
 	"fmt"
-	"strconv"
 )
 
-type Add func(int, int) int
+type F func(int, int) int
 
-func addFunc(a int, b int) int {
-	return a + b
-}
-
-func helloAdd(name string, newFunc Add, num1 int, num2 int) string {
-	return "Hello: " + name + " ... " + strconv.Itoa(newFunc(num1, num2))
+func execOperation(num1 int, num2 int, f F) int {
+	return f(num1, num2)
 }
 
 func main() {
-	fmt.Println(helloAdd("Vincent", addFunc, 10, 13))
+	fmt.Println(execOperation(10, 13, func(a int, b int)int {
+		return a + b
+	}))
+
+	fmt.Println(execOperation(10, 13, func(a int, b int)int {
+		return a - b
+	}))
 }
