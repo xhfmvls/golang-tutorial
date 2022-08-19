@@ -10,6 +10,10 @@ type Student struct {
 
 }
 
+func(student Student) greetings(name string) {
+	fmt.Printf("Hello %s, my name is %s, and i'm %d years old\n", name, student.Name, student.Age)
+}
+
 func main() {
 	var stu1 Student
 	stu1.Name = "Giorno"
@@ -25,4 +29,6 @@ func main() {
 		Name: "Bruno",
 	}
 	fmt.Println(stu2)
+	stu1.greetings("Narancia")
+	stu2.greetings("Fugo")
 }
