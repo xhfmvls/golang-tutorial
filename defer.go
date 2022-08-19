@@ -8,11 +8,13 @@ func logging() {
 	fmt.Println("LOG")
 }
 
-func runApp(num int) {
+func runApp(error bool) {
 	defer logging()
-	println(10 / num)
+	if(error) {
+		panic("[-] ERROR")
+	}
 }
 
 func main() {
-	runApp(0)
+	runApp(true)
 }
