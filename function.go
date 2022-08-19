@@ -4,6 +4,10 @@ import (
 	"fmt"
 )
 
+func addFive(num int) int {
+	return num + 5
+}
+
 func helloWorld() {
 	fmt.Println("Hello World!!!")
 }
@@ -20,4 +24,8 @@ func main() {
 	}
 
 	greet("vincent", "hello")
+
+	number := addFive(56)
+	fmt.Println(number)
+	fmt.Println(addFive(12))
 }
