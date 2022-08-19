@@ -4,28 +4,19 @@ import (
 	"fmt"
 )
 
-func getTwoValue() (int, string) {
-	return 5, "Joe"
+func multipyAll(numbers ...int) int {
+	total := 1
+	for _, val:= range(numbers) {
+		total *= val
+	}
+	return total
 }
 
-func getThreeValue() (int, byte, bool) {
-	return 19, 'a', false
-}
-
-func namedGetValue() (a string, b string, c string) {
-	a = "lol"
-	b = "test"
-	c = "pqkt"
-	return c, b, a
-}
 
 func main() {
-	a, b := getTwoValue()
-	fmt.Println(a, b)
-
-	f, _, e := getThreeValue()
-	println(f, e)
-
-	x, y, z := namedGetValue()
-	println(x, y, z)
+	fmt.Println(multipyAll(2, 3, 5, 6))
+	numList := []int{ 
+		1, 2, 3, 4,
+	}
+	fmt.Println(multipyAll(numList...))
 }
