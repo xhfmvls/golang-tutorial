@@ -4,18 +4,16 @@ import (
 	"fmt"
 )
 
-type F func(int, int) int
-
-func execOperation(num1 int, num2 int, f F) int {
-	return f(num1, num2)
+func fibo(n int)int {
+	if n == 1 {
+		return 1
+	}
+	return n * fibo(n - 1)
 }
 
 func main() {
-	fmt.Println(execOperation(10, 13, func(a int, b int)int {
-		return a + b
-	}))
+	fmt.Println(fibo(5))
 
-	fmt.Println(execOperation(10, 13, func(a int, b int)int {
-		return a - b
-	}))
+	val := fibo(6)
+	fmt.Println(val)
 }
