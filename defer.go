@@ -6,6 +6,11 @@ import (
 
 func logging() {
 	fmt.Println("LOG")
+	errorMessage := recover()
+	if(errorMessage == nil) {
+		errorMessage = "No Error"
+	}
+	fmt.Println(errorMessage)
 }
 
 func runApp(error bool) {
@@ -17,4 +22,6 @@ func runApp(error bool) {
 
 func main() {
 	runApp(true)
+	runApp(false)
+	fmt.Println("END")
 }
