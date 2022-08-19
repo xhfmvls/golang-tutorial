@@ -4,28 +4,18 @@ import (
 	"fmt"
 )
 
-func addFive(num int) int {
-	return num + 5
+func getTwoValue() (int, string) {
+	return 5, "Joe"
 }
 
-func helloWorld() {
-	fmt.Println("Hello World!!!")
-}
-
-func greet(name string, msg string) {
-	fmt.Println(msg, name)
+func getThreeValue() (int, byte, bool) {
+	return 19, 'a', false
 }
 
 func main() {
-	helloWorld()
+	a, b := getTwoValue()
+	fmt.Println(a, b)
 
-	for i := 0; i < 5; i++ {
-		helloWorld()
-	}
-
-	greet("vincent", "hello")
-
-	number := addFive(56)
-	fmt.Println(number)
-	fmt.Println(addFive(12))
+	f, _, e := getThreeValue()
+	println(f, e)
 }
