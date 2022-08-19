@@ -2,21 +2,19 @@ package main
 
 import (
 	"fmt"
+	"strconv"
 )
 
-func multipyAll(numbers ...int) int {
-	total := 1
-	for _, val:= range(numbers) {
-		total *= val
-	}
-	return total
+type Add func(int, int) int
+
+func addFunc(a int, b int) int {
+	return a + b
 }
 
+func helloAdd(name string, newFunc Add, num1 int, num2 int) string {
+	return "Hello: " + name + " ... " + strconv.Itoa(newFunc(num1, num2))
+}
 
 func main() {
-	fmt.Println(multipyAll(2, 3, 5, 6))
-	numList := []int{ 
-		1, 2, 3, 4,
-	}
-	fmt.Println(multipyAll(numList...))
+	fmt.Println(helloAdd("Vincent", addFunc, 10, 13))
 }
