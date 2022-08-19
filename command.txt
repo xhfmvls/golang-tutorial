@@ -12,3 +12,8 @@ run for development
 ```
 go run <filename>
 ```
+
+link to remote packages
+```
+go mod init <module/name>
+```
